@@ -1,0 +1,24 @@
+
+@width:100px;
+@height:@width *2;
+
+
+
+
+
+
+
+
+.bordertb(@sizi,@color){
+    
+    border-top: @sizi solid @color;
+    border-bottom: @sizi solid @color;
+    border-left: @sizi solid @color;
+    border-right:@sizi solid @color;
+}
+
+.box1{
+    width: @width;
+    height: @height;    
+    .bordertb(5px,#f00);
+}

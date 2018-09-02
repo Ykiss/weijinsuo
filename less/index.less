@@ -1,0 +1,373 @@
+/* 引入函数less */
+
+@import 'maxin.less';
+
+/* 引入变量less */
+
+@import 'variables.less';
+
+/* 头部样式 */
+
+header {
+    border-bottom: 1px solid @border-color;
+    .container {
+        .row {
+            >div {
+                height: 40px;
+                line-height: 40px;
+                border-right: 1px solid @border-color;
+                font-size: 12px;
+                &:last-child {
+                    border-right: none;
+                }
+                a {
+                    color: @a-color;
+                    text-decoration: none;
+                    img{
+                        display:none;
+                        position: absolute;
+                        left:50%;
+                        transform:translateX(-50%);
+                        z-index:999;
+                    }
+                    &:hover{
+                        img{
+                             display:block;
+                        }
+                       
+                        
+                    }
+                }
+                > button {
+                    background-color: @main-color;
+                }
+            }
+        }
+    }
+}
+
+
+/* 导航区域 */
+
+#nav {
+    background-color: #fff;
+    /* 导航条头部 */
+    .navbar-header {
+        /* 屏幕缩小后按钮居中 */
+        .navbar-toggle {
+            margin-top: 23px;
+        }
+        /*  导航头设置样式 */
+        .navbar-brand {
+            height: 80px;
+            line-height: 50px;
+            >i {
+                font-size: 30px;
+                &.icon-icon {
+                    color: @main-color;
+                }
+                &.icon-logo {
+                    color: black;
+                }
+            }
+        }
+    }
+    /* 导航身设置样式 */
+    .navbar-nav {
+        >li {
+            >a {
+                display: block;
+                height: 80px;
+                line-height: 50px;
+                &:hover {
+                    border-bottom: 2px solid @main-color;
+                }
+            }
+            &.active {
+                >a {
+                    display: block;
+                    border-bottom: 2px solid @main-color;
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}
+
+
+/* 轮播图区域 */
+
+#slide {
+    margin-top: -20px;
+    .large-image {
+        display: block;
+        height: 410px;
+        background-position: center center;
+    }
+    .small-image {
+        display: block;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+
+/* 特色专业区域 */
+
+#feature {
+    padding: 30px;
+    .row {
+        >div {
+            .media {
+                margin-top: 10px;
+                >a {
+                    color: #666;
+                    text-decoration: none;
+                    &:hover {
+                        color: @main-color;
+                    }
+                }
+                @media (max-width:768px) {
+                    >a {
+                        display: block;
+                        width: 220px;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* 立即预约样式 */
+
+#booking {
+    padding: 20px 0;
+    border-bottom: 1px solid @border-color;
+    border-top: 1px solid @border-color;
+}
+
+
+/* 特别推荐样式 */
+
+#products {
+    padding: 40px 0;
+    background-color: #f0f0f0;
+    .nav-tabs {
+        width: 750px;
+        >li {
+            &.active {
+                >a {
+                    background-color: transparent;
+                    border: 0;
+                    border-bottom: 3px solid @main-color;
+                    &:hover {
+                        border-bottom: 3px solid @main-color;
+                    }
+                }
+            }
+            a {
+                color: #333;
+                font-size: 16px;
+                &:hover {
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+
+/* 特别推荐内容样式 */
+
+.tab-content {
+    .tab-pane {
+        >.row {
+            >div {
+                margin-top: 20px;
+                .product {
+                    background-color: #fff;
+                    display: flex;
+                    &.red {
+                        background-color: @main-color;
+                        color: #fff;
+                        &::before {
+                            content: "\e915";
+                            font-family: 'itcast';
+                            font-size: 30px;
+                            position: absolute;
+                            left: 15px;
+                            top: -6px;
+                        }
+                    }
+                    .product-left {
+                        flex: 1;
+                        height: 160px;
+                        /* padding:10px; */
+                        >h4 {
+                            text-align: center;
+                            line-height: 30px;
+                        }
+                        >.row {
+                            margin: 0;
+                            >div {
+                                margin-bottom: 10px;
+                                >p {
+                                    margin-bottom: 0;
+                                }
+                                &:nth-child(2n) {
+                                    text-align: right;
+                                }
+                            }
+                        }
+                    }
+                    .product-right {
+                        width: 120px;
+                        height: 160px;
+                        border-left: 1px dashed @border-color;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+                        >p {
+                            margin-bottom: 0;
+                            >strong {
+                                font-size: 30px;
+                            }
+                        }
+                        &::before,
+                        &::after {
+                            content: '';
+                            width: 16px;
+                            height: 16px;
+                            border-radius: 50%;
+                            background-color: #eee;
+                            position: absolute;
+                            left: -8px;
+                        }
+                        &::before {
+                            top: -8px;
+                        }
+                        &::after {
+                            bottom: -8px;
+                        }
+                        .tooltips {
+                            >a {
+                                text-decoration: none;
+                                font-size: 14px;
+                                margin-left: 5px;
+                            }
+                            .tip-red {
+                                color: @main-color;
+                                border: 1px solid @main-color;
+                                padding: 2px;
+                            }
+                            .tip-green {
+                                color: #0f0;
+                                border: 1px solid #0f0;
+                                padding: 2px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* 全部新闻样式 */
+
+#news {
+    padding: 40px;
+    .row {
+        >div {
+            >h4 {
+                border-bottom: 1px dashed @border-color;
+                text-align: center;
+                line-height: 40px;
+                position: relative;
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 10px;
+                    height: 10px;
+                    border: 1px solid @border-color;
+                    position: absolute;
+                    border-radius: 50%;
+                    right: -9px;
+                    top: 35px;
+                }
+            }
+        }
+        .col-md-1 {
+            >ul {
+                .active {
+                    >a {
+                        background-color: @main-color;
+                    }
+                }
+                >li {
+                    margin-left: 2px;
+                    margin-bottom: 20px;
+                    >a {
+                        display: block;
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        text-align: center;
+                        &:hover {
+                            background-color: @main-color;
+                        }
+                        >i {
+                            color: @border-color;
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+        }
+        .col-md-7 {
+            .tab-content {
+                .tab-pane{
+                    >ul {
+                        >li {
+                            list-style: none;
+                            line-height: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 合作伙伴区域样式 */
+#partner{
+    padding:40px 0;
+    h3{
+        text-align:center;
+    }
+    ul{
+        display:flex;
+        padding-left:0;
+        li{
+            flex:1;
+            list-style:none;
+
+            >a{
+                color:#333;
+                text-decoration:none;
+                &:hover{
+                    color:@main-color;
+                }
+                >i{
+                    font-size:60px;
+                }
+            }
+        }
+    }
+}
